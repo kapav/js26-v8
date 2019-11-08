@@ -1,4 +1,5 @@
 import {Routes} from '@angular/router'
+
 import {HomePageComponent} from './home-page/home-page.component'
 import {PhraseListComponent} from './shared/components/phrase-list/phrase-list.component'
 import {PhraseDetailComponent} from './shared/components/phrase-detail/phrase-detail.component'
