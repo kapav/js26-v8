@@ -1,0 +1,12 @@
+<div *ngIf="phrase; else pose">
+  <h2>Выбранная фраза</h2>
+  Значение: {{ phrase.value }}<br/>
+  Язык: {{ phrase.language }}<br/>
+  <button (click)="goToPhraseList()">Вернуться</button>
+</div>
+
+<ng-template #pose>
+  <h2>Нет данных о фразе</h2>
+  <p>Фраза не выбрана, фразы с данным идентификатором не существует или указано нечисловое значение идентификатора</p>
+  <button (click)="goToPhraseList()">Вернуться</button>
+</ng-template>
