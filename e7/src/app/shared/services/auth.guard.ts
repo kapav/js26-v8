@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
+import { Injectable  } from '@angular/core';
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+
+import {AuthService} from './auth.service'
 
 /*
     Guard - механизм для выполнения проверок перед активацией
@@ -23,10 +25,25 @@ export class AuthGuard implements CanActivate {
     // Возможные результаты работы метода.
     // Если возвращённое значение true, то маршрут будет
     // активирован, иначе - нет.
-  canActivate() {
-    let value = true
-    console.log('Метод AuthGuard\'а canActivate возвращает: ' + value)
-    return true
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) {}
+  // ActivatedRouteSnapshot - информация о маршруте,
+  // связанным с загруженым компонентом.
+  // RouterStateSnapshot - состояние маршрута в определённый
+  // отрезок времени.
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ) {
+    if (this.authService.isLoggedIn) {
+      return true
+    } else {
+      this.authService.redirectUrl = state.url
+      this.router.navigate(['/login'])
+      return false
+    }
   }
   
 }
