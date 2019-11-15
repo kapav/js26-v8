@@ -1,8 +1,9 @@
 <div *ngIf="phrase; else pose">
   <h2>Выбранная фраза</h2>
-  Значение: {{ phrase.value }}<br/>
-  Язык: {{ phrase.language }}<br/>
+  Значение: <input type="text" [(ngModel)]="editValue"><br/>
+  Язык: <input type="text" [(ngModel)]="editLanguage"><br/>
   <button (click)="goToPhraseList()">Вернуться</button>
+  <button (click)="save()">Сохранить</button>
 </div>
 
 <ng-template #pose>

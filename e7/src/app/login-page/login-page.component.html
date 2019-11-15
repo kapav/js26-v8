@@ -1,7 +1,7 @@
 <h2>Страница входа</h2>
 <p>{{  message }}</p>
 <div *ngIf="!authService.isLoggedIn">
-  Имя пользхователя: <input type="text" [(ngModel)]="userLogin"><br/>
+  Имя пользователя: <input type="text" [(ngModel)]="userLogin"><br/>
   Пароль: <input type="password" [(ngModel)]="password"><br/>
   <button (click)="login()">Войти</button>
 </div>

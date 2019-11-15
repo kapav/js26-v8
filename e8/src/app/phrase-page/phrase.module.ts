@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {FormsModule} from '@angular/forms'
 
 import {PhraseRoutingModule} from './phrase-routing.module'
 
@@ -13,6 +14,7 @@ import {PhraseDetailComponent} from '../shared/components/phrase-detail/phrase-d
   ],
   imports: [
     CommonModule,
+    FormsModule,
     PhraseRoutingModule // Настройки маршрутизации для модуля
       // PhraseModule.
   ]
