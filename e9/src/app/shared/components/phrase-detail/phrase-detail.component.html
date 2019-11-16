@@ -1,13 +1,7 @@
-<div *ngIf="phrase; else pose">
+<div>
   <h2>Выбранная фраза</h2>
   Значение: <input type="text" [(ngModel)]="editValue"><br/>
   Язык: <input type="text" [(ngModel)]="editLanguage"><br/>
   <button (click)="goToPhraseList()">Вернуться</button>
   <button (click)="save()">Сохранить</button>
 </div>
-
-<ng-template #pose>
-  <h2>Нет данных о фразе</h2>
-  <p>Фраза не выбрана, фразы с данным идентификатором не существует или указано нечисловое значение идентификатора</p>
-  <button (click)="goToPhraseList()">Вернуться</button>
-</ng-template>
